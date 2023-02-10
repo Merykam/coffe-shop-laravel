@@ -1,0 +1,156 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lobster&display=swap');
+.aa{
+    text-decoration: none !important;
+    color: black !important;
+}
+.i1{
+    font-size: 3rem;
+}
+.mainn{
+    margin-left: 370px;
+    margin-top: 70px;
+
+
+}
+table{
+    margin-top: 30px;
+}
+button{
+    border: none;
+    height: 35px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.update{
+    background-color: green;
+    color: white;
+
+}
+.Delet{
+    background-color: red;
+    color: white;
+
+}
+thead{
+    background-color: rgb(165, 85, 42);
+    color: white;
+}
+.card2{
+    height: 200px !important;
+    background-image: linear-gradient(to right, black ,  rgb(165, 85, 42));
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card-title, .card-subtitle{
+    font-size: 1.5rem;
+    margin-top: 30px;
+}
+.margin{
+    margin-left: 350px;
+    margin-top: 70px !important;
+    padding-top:40px;
+}
+
+.btn1{
+   background-color:rgb(209, 160, 134);
+   color: white;
+}
+/* .card{
+    height: 20rem;
+} */
+.form-control{
+    width: 30rem;
+}
+.bi-plus{
+    text-align: center;
+}
+.mt{
+    margin-top: 90px !important;
+}
+/* .mt-content{
+    margin-top: 80px !important;
+} */
+.card-header{
+    background-color:rgb(165, 85, 42) ;
+    color: white;
+}
+.task-action-btn{
+    background-color: black;
+    color: white;
+}
+
+.btn3{
+    margin-top: 40px !important;
+}
+
+.btn-dark{
+    border-radius: 1rem !important;
+    height: 90px !important;
+    padding: 10px;
+    display: inline;
+    font-weight: bold;
+    margin-left: 360px;
+   
+    
+}
+
+.collapse2{
+    height: calc(100vh - 91.87px) !important;
+}
+
+
+.imgg{
+    background-image: url('../pics/first.jpg');
+    background-position: center;
+    background-size: cover;
+    height:15rem !important;
+
+}
+
+h2{
+    color: white;
+    font-size: 4rem;
+    padding-top: 8rem;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+}
+
+h1 .coffe{
+    color: rgb(165, 85, 42) !important;
+
+}
+
+h1 .shop{
+    color: rgb(234, 220, 220) !important;
+
+}
+
+h1{
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.nav-link{
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+    background-color:rgb(165, 85, 42);
+    border-radius: 0.5rem;
+}
+.nav-link:hover{
+    
+   
+    color: white;
+    
+}
+.backgroud{
+    background-image: url('../pics/first.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   height: calc(100vh - 91.87px);
+   
+
+
+}

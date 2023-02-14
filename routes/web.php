@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\CoffeController;
+use App\Http\Controllers\CofController;
+
+
+// use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +25,35 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/dashbord', [CoffeController::class, 'index']);
+
+Route::group(['middleware' => 'auth'], function() {
+
+    return view('coffe.index');
+
+});
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/edit/{id}', [CofController::class, 'edit']);
+
+
+Route::group(['middleware' => ['admin']], function () {
+  Route::resource('coffe',CofController::class);
+});
+
+
+
+Route::middleware(['auth'])->group(function () {
+  Route::get('profile',[ProfileController::class,'index'])->name('profile');
+  Route::post('profile/{user}',[ProfileController::class,'update'])->name('profile.update');
+});
+
+Route::get('/change-password', [App\Http\Controllers\ChangePassword::class, 'changePassword'])->name('change-password');
+Route::post('/change-password', [App\Http\Controllers\ChangePassword::class, 'updatePassword'])->name('update-password');
+
+
+
+
+
 
 

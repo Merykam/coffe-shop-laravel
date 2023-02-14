@@ -54,9 +54,9 @@
 
 
  <!-- Modal -->
- <!-- <div class="btn3">
-				<a href="#modal-task" data-bs-toggle="modal" class="btn btn-dark"><i class="bi bi-plus"></i> Add new drink</a>
-		</div> -->
+ <div class="btn3">
+				<a href="{{ route('coffe.create') }}"  class="btn btn-dark"><i class="bi bi-plus"></i> Add new drink</a>
+		</div>
   
 
 
@@ -76,17 +76,31 @@
   </thead>
   <tbody>
 
-
+  @foreach ($coffes as $coffe)
     <tr>
       <th scope="row">1</th>
-      <td>jj</td>
-      <td>ggg</td>
-      <td>fff</td>
+      <td>{{$coffe['name']}}</td>
+      <td>{{$coffe['price']}}</td>
+      <td>{{$coffe['description']}}</td>
       <td>
-        <button class="update">Update</button>
-        <button class="Delet">Delet</button>
+
+      <div class="d-flex">
+
+    
+      <a href="{{route('coffe.edit',$coffe->id)}}" class="update">Update</a>
+
+      <form method="post" action="{{route('coffe.destroy',$coffe->id)}}">
+      @csrf 
+      @method('DELETE')
+
+      <button type="submit"  class="Delet ms-3" >Delete</button>
+
+      </form>
+      </div>
+       
       </td>
     </tr>
+@endforeach
    
   </tbody>
 </table>

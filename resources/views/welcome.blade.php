@@ -15,11 +15,8 @@
             <div class="imgg">
 
             </div>
-            <div class="card-body">
-                <h3 class="fw-bold">Pizza</h3>
-                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore ipsa corrupti perspiciatis maiores nisi</p>
-                <h3 class="fw-bold">7$</h3>
-            </div>
+
+          
         </div>
 
         

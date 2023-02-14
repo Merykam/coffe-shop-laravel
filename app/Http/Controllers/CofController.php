@@ -4,10 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\coffe;
+use App\Models\coffeshop;
+
 
 class CofController extends Controller
 {
+   
+    public function __construct()
+    {
+        $this->middleware('auth');
+    } 
+   
+   
+   
+   
     /**
      * Display a listing of the resource.
      *
@@ -15,10 +25,17 @@ class CofController extends Controller
      */
     public function index()
     {
-        return view('home',[
-            'coffes' -> coffe::all()
+        return view('coffe.index',[
+            'coffes' => coffeshop::all()
         ]);
     }
+
+    // public function welcome()
+    // {
+    //     return view('welcome',[
+    //         'coffes' => coffeshop::all()
+    //     ]);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -27,8 +44,8 @@ class CofController extends Controller
      */
     public function create()
     {
-        //
-        // return view("home");
+        
+        return view("coffe.create");
     }
 
     /**
@@ -39,15 +56,23 @@ class CofController extends Controller
      */
     public function store(Request $request)
     {
-        $coffe = new coffe();
 
-        $coffe -> name = $request ->input('name');
-        $coffe -> description = $request ->input('description');
-        $coffe -> price = $request ->input('price');
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+        ]);
+
+        $coffe = new coffeshop();
+
+        $coffe -> name = strip_tags($request ->input('name'));
+        $coffe -> description =strip_tags($request ->input('description'));
+        $coffe -> price = strip_tags($request ->input('price'));
 
         $coffe->save();
 
-        return redirect()->route('home');
+        return redirect()->route('coffe.index');
     }
 
     /**
@@ -58,7 +83,7 @@ class CofController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -69,7 +94,9 @@ class CofController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('coffe.edit',[
+            'coffes' => coffeshop::findOrFail($id)
+        ]);
     }
 
     /**
@@ -79,9 +106,26 @@ class CofController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $coffe)
     {
-        //
+         $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+        ]);
+
+        $update = coffeshop::findOrFail($coffe);
+        
+
+        $update -> name = strip_tags($request ->input('name'));
+        $update-> description =strip_tags($request ->input('description'));
+        $update -> price = strip_tags($request ->input('price'));
+
+        $update->save();
+
+        return redirect()->route('coffe.index',$coffe);
+
+
     }
 
     /**
@@ -90,8 +134,15 @@ class CofController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($coffe)
     {
-        //
+
+        $delet =coffeshop::findOrFail($coffe);
+        $delet ->delete();
+        return redirect()->route('coffe.index');
+        
     }
+
+
+
 }

@@ -11,37 +11,29 @@
 
         <div class="row">
 
-        <div class="card col" style="width: 18rem;">
-            <div class="imgg">
+      
 
-            </div>
 
-          
-        </div>
-
+          @foreach ($coffes as $coffe)
+            
         
-        <div class="card col" style="width: 18rem;">
+        <div class="card col-4" >
             <div class="imgg">
 
             </div>
             <div class="card-body">
-            <h3 class="fw-bold">Pizza</h3>
-                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore ipsa corrupti perspiciatis maiores nisi</p>
-                <h3 class="fw-bold">7$</h3>
+            
+            <h3 class="fw-bold">{{$coffe['name']}}</h3>
+                <p class="card-text">{{$coffe['price']}}</p>
+                <h3 class="fw-bold">{{$coffe['description']}}</h3>
             </div>
+
         </div>
 
         
-        <div class="card col" style="width: 18rem;">
-            <div class="imgg">
+        @endforeach
 
-            </div>
-            <div class="card-body">
-                <h3 class="fw-bold">Pizza</h3>
-                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore ipsa corrupti perspiciatis maiores nisi</p>
-                <h3 class="fw-bold">7$</h3>
-            </div>
-        </div>
+   
 
         </div>
 

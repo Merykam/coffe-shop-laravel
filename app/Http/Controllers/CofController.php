@@ -30,12 +30,12 @@ class CofController extends Controller
         ]);
     }
 
-    // public function welcome()
-    // {
-    //     return view('welcome',[
-    //         'coffes' => coffeshop::all()
-    //     ]);
-    // }
+    public function welcome()
+    {
+        return view('welcome',[
+            'coffes' => coffeshop::all()
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.

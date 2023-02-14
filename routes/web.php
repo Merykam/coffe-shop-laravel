@@ -19,9 +19,11 @@ use App\Http\Controllers\Admin\ProfileController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/',[CofController::class,'welcome']);
 
 Auth::routes();
 

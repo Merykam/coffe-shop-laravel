@@ -5,8 +5,17 @@
     text-decoration: none !important;
     color: black !important;
 }
+.edit{
+    background-color: black;
+    width: 30rem;
+   color: white;
+}
 .i1{
     font-size: 3rem;
+}
+.drink{
+    border-radius: 5px;
+    padding: 5px;
 }
 .mainn{
     margin-left: 370px;

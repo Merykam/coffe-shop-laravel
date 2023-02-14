@@ -17,15 +17,15 @@
           @foreach ($coffes as $coffe)
             
         
-        <div class="card col-4" >
+        <div class="card col-4 mt-2" >
             <div class="imgg">
 
             </div>
             <div class="card-body">
             
             <h3 class="fw-bold">{{$coffe['name']}}</h3>
-                <p class="card-text">{{$coffe['price']}}</p>
-                <h3 class="fw-bold">{{$coffe['description']}}</h3>
+                <p class="card-text">{{$coffe['description']}}</p>
+                <h3 class="fw-bold">{{$coffe['price']}} $</h3>
             </div>
 
         </div>

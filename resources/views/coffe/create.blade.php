@@ -1,17 +1,24 @@
 @extends('layouts.app')
 
+
+
+
+
 <div class="form-create">
+
+
 
 
 
 
 <form action="{{route('coffe.store')}}" method="post">
     @csrf 
-<div class="form-row">
+    <h3 class="text-white drink text-center bg-dark mt-5 fw-bold">Add new drink</h3>
+<div class="form-row mt-3">
 
 
-<div class=" col mb-0">
-    <label class="form-label">Drink name</label>
+<div class="col mb-0">
+    <label class="form-label fw-bold">Drink name</label>
     <input value="{{old('name')}}" type="text" class="form-control"  name="name" />
 </div>
 
@@ -29,8 +36,8 @@
   <input type="file" class="form-control" id="task-title" name="pic"/>
 </div> -->
 <div class="col  mb-0">
-  <label class="form-label">Price</label>
-  <input value="{{old('price')}}" type="number" class="form-control" id="task-title" name="price"/>
+  <label class="form-label fw-bold">Price</label>
+  <input value="{{old('price')}}" type="number" class="form-control fw-bold" id="task-title" name="price"/>
 </div>
 <div class="m-0 text-danger" >
   @error('price')
@@ -41,8 +48,8 @@
 </div>
 
 <div class="col mb-0">
-  <label class="form-label">Description</label>
-  <input value="{{old('description')}}" class="form-control" id="task-description" name="description"></input>
+  <label class="form-label fw-bold">Description</label>
+  <input value="{{old('description')}}" class="form-control fw-bold" id="task-description" name="description"></input>
 </div>
 <div class="m-0 text-danger">
   @error('description')

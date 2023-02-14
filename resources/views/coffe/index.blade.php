@@ -67,7 +67,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Drink</th>
+     
       <th scope="col">Name</th>
       <th scope="col">Prix</th>
       <th scope="col">Description</th>
@@ -78,7 +78,7 @@
 
   @foreach ($coffes as $coffe)
     <tr>
-      <th scope="row">1</th>
+     
       <td>{{$coffe['name']}}</td>
       <td>{{$coffe['price']}}</td>
       <td>{{$coffe['description']}}</td>
